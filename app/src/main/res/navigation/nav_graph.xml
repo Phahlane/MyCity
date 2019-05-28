@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cityFragment">
+
+    <fragment
+    android:id="@+id/cityFragment"
+    android:name="com.entersekt.mycity.views.CitiesFragment"
+    android:label="fragment_first"
+    tools:layout="@layout/fragment_cities" >
+        <action
+            android:id="@+id/action_cityFragment_to_mallFragment"
+            app:destination="@id/mallFragment"
+            app:enterAnim="@anim/fade_out" >
+
+        </action>
+
+        <action
+            android:id="@+id/action_cityFragment_to_shopFragment"
+            app:destination="@id/shopFragment"
+            app:enterAnim="@anim/fade_out" />
+</fragment>
+
+<fragment
+        android:id="@+id/mallFragment"
+    android:name="com.entersekt.mycity.views.MallsFragment"
+        android:label="fragment_mall"
+        tools:layout="@layout/fragment_malls" >
+    <action
+        android:id="@+id/action_mallFragment_to_shopFragment"
+        app:destination="@id/shopFragment"
+        app:enterAnim="@anim/slide_out_right" />
+</fragment>
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.entersekt.mycity.views.ShopsFragment"
+        android:label="fragment_shops"
+        tools:layout="@layout/fragment_shops" >
+        <action
+            android:id="@+id/action_thirdFragment_to_firstFragment"
+            app:destination="@id/mallFragment"
+            app:enterAnim="@anim/slide_out_left" />
+    </fragment>
+</navigation>
